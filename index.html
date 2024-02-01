@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="About StellarCraft Studios">
+  <meta name="author" content="StellarCraft Studios">
+  <title>StellarCraft Studios</title>
+  <script id="shader-fs" type="x-shader/x-fragment">
+      #ifdef GL_ES
+        precision highp float;
+        #endif
+        
+       uniform vec4 color;
+       
+      void main(void) {
+       gl_FragColor = color;
+      }
+  </script>
+  <script id="shader-vs" type="x-shader/x-vertex">
+      attribute vec3 vertexPosition;
+    uniform mat4 modelViewMatrix;
+    uniform mat4 perspectiveMatrix;
+    void main(void) {
+      gl_Position = perspectiveMatrix * modelViewMatrix * vec4(vertexPosition, 1.0);
+    } 
+  </script>
+  <!-- Style -->
+  <link type="text/css" rel="stylesheet" href="style.css"/>
+  <!-- Custom Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <canvas id="webGLCanvas"></canvas>
+
+  <div id="content">          
+    <div class="main_box" >
+      <video controls="controls" autoplay="autoplay" muted width="800" height="auto" name="StellarCraft Studios logo particle" >
+        <source src="stellercraft logo particles.webm" type="video/webm">
+      </video>
+    </div>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
